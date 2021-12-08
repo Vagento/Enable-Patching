@@ -1,14 +1,20 @@
 {
     "name": "vagento/enable-patching",
-    "require": {
-        "php": ">=8.0",
-        "cweagans/composer-patches": "*"
-    },
-    "type": "vagento-module",
+    "type": "composer-plugin",
     "license": "MIT",
+    "require": {
+        "cweagans/composer-patches": "*",
+        "composer-plugin-api": "^2.0"
+    },
+    "require-dev": {
+        "composer/composer": "^2.0"
+    },
     "autoload": {
-        "files": [
-            "enablePatching.php"
-        ]
+        "psr-4": {
+            "Vagento\\EnablePatching\\": ""
+        }
+    },
+    "extra": {
+        "class": "Vagento\\EnablePatching\\EnablePatchingPlugin"
     }
 }
